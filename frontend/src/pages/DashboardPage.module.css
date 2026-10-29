@@ -1,0 +1,467 @@
+/* ── Outer shell — centres the phone on desktop ── */
+.shell {
+  min-height: 100vh;
+  background: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  padding: 1rem;
+}
+
+/* ── Phone frame ── */
+.phone {
+  width: 100%;
+  max-width: 390px;
+  height: 90vh;
+  max-height: 844px;
+  background: #f5f5f5;
+  border-radius: 40px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: sticky;
+  top: 5vh;
+}
+
+@media (max-width: 430px) {
+  .shell {
+    padding: 0;
+    background: #f5f5f5;
+    align-items: flex-start;
+  }
+  .phone {
+    border-radius: 0;
+    box-shadow: none;
+    height: 100dvh;
+    max-height: none;
+    position: static;
+    top: auto;
+  }
+}
+
+/* ── Status bar ── */
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.25rem 0;
+  font-size: 0.7rem;
+  color: #111;
+  font-weight: 600;
+}
+.statusIcons { display: flex; gap: 0.4rem; font-size: 0.65rem; }
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.25rem 0.75rem;
+  background: #ffffff;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.greeting {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.profileBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  color: #6b7280;
+}
+
+/* ── Scrollable area ── */
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem 1rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Loading ── */
+.loadingState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #9ca3af;
+  padding: 4rem 0;
+}
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #c0392b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Balance card ── */
+.balanceCard {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.balanceTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.balanceLabel {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.activeBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #16a34a;
+  background: #dcfce7;
+  border-radius: 20px;
+  padding: 0.15rem 0.6rem;
+}
+
+.balanceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.balanceAmount {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 1px;
+}
+
+.eyeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  color: #9ca3af;
+}
+
+.divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin-bottom: 0.85rem;
+}
+
+.accountRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.acctDetailLabel {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+
+.acctNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.acctNumber {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.copyBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #c0392b;
+  padding: 0;
+}
+
+.acctName {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+.acctTypeBlock {
+  text-align: right;
+}
+
+.acctType {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ── Section wrapper ── */
+.section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.sectionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.viewAll {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: #c0392b;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Quick actions grid ── */
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.actionIcon {
+  width: 52px;
+  height: 52px;
+  background: #fff5f5;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #c0392b;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.actionItem:hover .actionIcon {
+  background: #ffe4e1;
+  transform: translateY(-2px);
+}
+
+.actionLabel {
+  font-size: 0.68rem;
+  color: #374151;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── Recent activity ── */
+.dateLabel {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-weight: 500;
+  margin: 0.5rem 0 0.4rem;
+}
+
+.txRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f9fafb;
+}
+.txRow:last-child { border-bottom: none; }
+
+.txAvatar {
+  width: 38px;
+  height: 38px;
+  background: #fff5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.txAvatarZ {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #c0392b;
+  line-height: 1;
+}
+
+.txInfo { flex: 1; min-width: 0; }
+
+.txDesc {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.txTime {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin: 0.1rem 0 0;
+}
+
+.txCredit {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #16a34a;
+  white-space: nowrap;
+}
+
+.txDebit {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  padding: 1.5rem 0;
+}
+
+/* ── Bottom nav ── */
+.bottomNav {
+  position: sticky;
+  bottom: 0;
+  background: #ffffff;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0 1rem;
+  z-index: 10;
+}
+
+.navTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+  min-width: 64px;
+}
+
+.navIcon {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  line-height: 1;
+}
+
+.navLabel {
+  font-size: 0.65rem;
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.navTabActive .navIcon,
+.navTabActive .navLabel {
+  color: #c0392b;
+}
+
+/* ── QR modal ── */
+.qrOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1rem;
+}
+
+.qrBox {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.qrTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.qrCode {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.qrClose {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #c0392b, #7b0000);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
